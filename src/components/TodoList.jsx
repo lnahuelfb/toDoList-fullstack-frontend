@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import TodoCard from './TodoCard'
+import Form from './Form'
 import styles from './styles/TodosList'
 
 const TodoList = () => {
@@ -22,9 +23,9 @@ const TodoList = () => {
   }, [])
 
   return (
-    <>
+    <div style={styles.container}>
       <h1 style={styles.title}>ToDo's</h1>
-      <div style={styles.container}>
+      <div style={styles.containerCards}>
         {
         Todos.length > 0
           ? Todos.map((todo) => {
@@ -43,14 +44,12 @@ const TodoList = () => {
           : (
             <div style={styles.notFound}>
               <h1>¡Aún no has creado ninguna tarea!</h1>
-              <button style={styles.button}>
-                <a href='/create-ToDo' style={styles.link}>Crear una tarea</a>
-              </button>
+              <Form />
             </div>
             )
       }
       </div>
-    </>
+    </div>
   )
 }
 

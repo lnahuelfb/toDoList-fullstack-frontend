@@ -1,12 +1,13 @@
 const styles = {
   container: {
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#f5f5f5',
     padding: '20px',
-    height: '70vh'
+    marginBottom: '20px'
   },
 
   input: {

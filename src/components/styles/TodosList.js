@@ -1,11 +1,18 @@
 const styles = {
   container: {
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: '#f5f5f5'
+  },
+
+  containerCards: {
     padding: '0 75px',
     display: 'flex',
     flexDirection: 'raw',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5'
   },
 
   title: {
@@ -17,22 +24,9 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: '50px 0'
-  },
-
-  button: {
-    fontSize: '1.2rem',
-    padding: '10px',
-    margin: '0 10px',
-    borderRadius: '5px',
-    background: '#000',
-    transition: '0.5s'
-  },
-
-  link: {
-    color: 'white',
-    textDecoration: 'none'
+    width: '100%'
   }
+
 }
 
 export default styles

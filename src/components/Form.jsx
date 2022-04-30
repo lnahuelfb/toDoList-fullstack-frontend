@@ -32,7 +32,7 @@ const Form = () => {
 
   return (
     <div style={styles.container}>
-      <h2>Crea una nueva tarea!</h2>
+      <h2>¡Crea una nueva tarea!</h2>
       <form
         style={styles.form}
         onSubmit={handleSubmit}
