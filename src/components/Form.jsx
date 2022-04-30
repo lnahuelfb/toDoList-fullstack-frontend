@@ -20,7 +20,7 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await fetch('http://localhost:3001/todos', {
+    await fetch('https://todo-list-lnahuelfb.herokuapp.com/todos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

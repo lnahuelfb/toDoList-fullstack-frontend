@@ -7,7 +7,7 @@ const TodoCard = (props) => {
 
   const handleDelete = async () => {
     try {
-      await fetch(`http://localhost:3001/todos/${props.id}`, {
+      await fetch(`https://todo-list-lnahuelfb.herokuapp.com/todos/${props.id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
@@ -22,7 +22,7 @@ const TodoCard = (props) => {
 
   const handleComplete = async () => {
     try {
-      await fetch(`http://localhost:3001/todos/${props.id}`, {
+      await fetch(`https://todo-list-lnahuelfb.herokuapp.com/todos/${props.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
@@ -47,6 +47,7 @@ const TodoCard = (props) => {
               <h3>{props.task}</h3>
               <p>Contenido: {props.description}</p>
               <p>Important: {props.important.toString()}</p>
+              <p>Creado: {props.date}</p>
               <p>Complete:
                 {
                   complete ? ' ✅' : ' ❌'

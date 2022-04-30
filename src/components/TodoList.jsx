@@ -4,7 +4,7 @@ import styles from './styles/TodosList'
 
 const TodoList = () => {
   const [Todos, setTodos] = useState([])
-  const API = 'http://localhost:3001/todos'
+  const API = 'https://todo-list-lnahuelfb.herokuapp.com/todos'
 
   const fetchData = async (API) => {
     try {
@@ -36,6 +36,7 @@ const TodoList = () => {
                 description={todo.description}
                 important={todo.important}
                 complete={todo.complete}
+                date={todo.date}
               />
             )
           })
