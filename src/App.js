@@ -35,6 +35,20 @@ function App () {
         <Route path='/' element={<TodoList />} />
         <Route path='/create-ToDo' element={<Form />} />
       </Routes>
+      <footer>
+        <h1>
+          <a href='https://porfolio-nahuelfb.vercel.app/'>
+            Nahuel Beschtedt
+          </a>
+        </h1>
+        <nav>
+          <ul>
+            <li><a href='https://github.com/lnahuelfb'>GitHub</a></li>
+            <li><a href='https://www.linkedin.com/in/nahuel-fernandez-beschtedt/'>Linkedin</a></li>
+            <li><a href='https://api.whatsapp.com/send?phone=541163783961'>WhatsApp</a></li>
+          </ul>
+        </nav>
+      </footer>
     </div>
   )
 }

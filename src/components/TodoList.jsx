@@ -26,7 +26,7 @@ const TodoList = () => {
       <h1 style={styles.title}>ToDo's</h1>
       <div style={styles.container}>
         {
-        Todos
+        Todos.length > 0
           ? Todos.map((todo) => {
             return (
               <TodoCard
@@ -39,7 +39,14 @@ const TodoList = () => {
               />
             )
           })
-          : <h1>Loading</h1>
+          : (
+            <div style={styles.notFound}>
+              <h1>¡Aún no has creado ninguna tarea!</h1>
+              <button style={styles.button}>
+                <a href='/create-ToDo' style={styles.link}>Crear una tarea</a>
+              </button>
+            </div>
+            )
       }
       </div>
     </>

@@ -27,6 +27,7 @@ const Form = () => {
       },
       body: JSON.stringify(input)
     })
+      .then(window.alert('Tarea agregada con exito!'))
   }
 
   return (

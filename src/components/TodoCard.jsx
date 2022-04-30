@@ -3,23 +3,24 @@ import styles from './styles/TodoCard'
 
 const TodoCard = (props) => {
   const [complete, setComplete] = useState(props.complete)
+  const [isDeleted, setDelete] = useState(false)
 
-  const handleDelete = () => {
-    fetch(`http://localhost:3001/todos/${props.id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(() => {
-        window.alert('Eliminado con extio!')
-      }
-      )
+  const handleDelete = async () => {
+    try {
+      await fetch(`http://localhost:3001/todos/${props.id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(setDelete(true))
+        .then(window.alert('Eliminado con extio!'))
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   const handleComplete = async () => {
-    console.log(props.id)
-
     try {
       await fetch(`http://localhost:3001/todos/${props.id}`, {
         method: 'PATCH',
@@ -37,18 +38,27 @@ const TodoCard = (props) => {
   }
 
   return (
-    <div style={styles.container}>
-      <h3>{props.task}</h3>
-      <p>Contenido: {props.description}</p>
-      <p>Important: {props.important.toString()}</p>
-      <p>Complete:
-        {
-          complete ? '✅' : '❌'
-        }
-      </p>
-      <button onClick={() => handleComplete()}>Completado</button>
-      <button onClick={() => handleDelete()}>Eliminar</button>
-    </div>
+    <>
+      {
+        isDeleted
+          ? null
+          : (
+            <div style={styles.container}>
+              <h3>{props.task}</h3>
+              <p>Contenido: {props.description}</p>
+              <p>Important: {props.important.toString()}</p>
+              <p>Complete:
+                {
+                  complete ? ' ✅' : ' ❌'
+                }
+              </p>
+              <button onClick={() => handleComplete()}>Completado</button>
+              <button onClick={() => handleDelete()}>Eliminar</button>
+            </div>
+            )
+    }
+    </>
+
   )
 }
 
