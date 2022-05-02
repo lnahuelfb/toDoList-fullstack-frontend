@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useState } from 'react'
-import styles from './styles/Form'
+import './styles/Form.css'
 
 const Form = () => {
   const [input, setInput] = useState({
@@ -31,10 +31,10 @@ const Form = () => {
   }
 
   return (
-    <div style={styles.container}>
+    <div className='form-container'>
       <h2>¡Crea una nueva tarea!</h2>
       <form
-        style={styles.form}
+        className='form'
         onSubmit={handleSubmit}
       >
         <label htmlFor='task'>Tarea</label>
@@ -42,7 +42,7 @@ const Form = () => {
           type='text'
           name='task'
           id='task'
-          style={styles.input}
+          className='input'
           value={input.task}
           onChange={handleChange}
           required
@@ -52,18 +52,18 @@ const Form = () => {
           type='text'
           name='description'
           id='description'
-          style={styles.input}
+          className='input'
           value={input.description}
           onChange={handleChange}
           required
         />
-        <div style={styles.check}>
+        <div className='check'>
           <label htmlFor='important'>Importante</label>
           <input
             type='checkbox'
             name='important'
             id='important'
-            style={styles.input}
+            className='input'
             value={input.important}
             onChange={handleChange}
           />
@@ -72,7 +72,7 @@ const Form = () => {
             type='checkbox'
             name='complete'
             id='complete'
-            style={styles.input}
+            className='input'
             value={input.complete}
             onChange={handleChange}
           />
@@ -80,7 +80,7 @@ const Form = () => {
         <button
           type='submit'
           value='submit'
-          style={styles.button}
+          className='button'
         >
           Enviar
         </button>

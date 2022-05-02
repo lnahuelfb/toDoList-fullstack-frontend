@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './styles/TodoCard'
+import './styles/TodoCard.css'
 
 const TodoCard = (props) => {
   const [complete, setComplete] = useState(props.complete)
@@ -43,7 +43,7 @@ const TodoCard = (props) => {
         isDeleted
           ? null
           : (
-            <div style={styles.container}>
+            <div className='container'>
               <h3>{props.task}</h3>
               <p>Contenido: {props.description}</p>
               <p>Important: {props.important.toString()}</p>
@@ -53,8 +53,8 @@ const TodoCard = (props) => {
                   complete ? ' ✅' : ' ❌'
                 }
               </p>
-              <button onClick={() => handleComplete()}>Completado</button>
-              <button onClick={() => handleDelete()}>Eliminar</button>
+              <button className='card-button' onClick={() => handleComplete()}>Completado</button>
+              <button className='card-button' onClick={() => handleDelete()}>Eliminar</button>
             </div>
             )
     }

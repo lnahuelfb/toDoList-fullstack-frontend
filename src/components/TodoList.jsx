@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import TodoCard from './TodoCard'
 import Form from './Form'
-import styles from './styles/TodosList'
+import './styles/TodosList.css'
 
 const TodoList = () => {
   const [Todos, setTodos] = useState([])
@@ -20,12 +20,12 @@ const TodoList = () => {
 
   useEffect(() => {
     fetchData(API)
-  }, [])
+  }, [Todos])
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>ToDo's</h1>
-      <div style={styles.containerCards}>
+    <div className='list-container'>
+      <h1 className='title'>ToDo's</h1>
+      <div className='containerCards'>
         {
         Todos.length > 0
           ? Todos.map((todo) => {
@@ -42,7 +42,7 @@ const TodoList = () => {
             )
           })
           : (
-            <div style={styles.notFound}>
+            <div className='notFound'>
               <h1>¡Aún no has creado ninguna tarea!</h1>
               <Form />
             </div>

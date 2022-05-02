@@ -11,7 +11,7 @@ function App () {
   return (
     <div className='App'>
       <header>
-        <h1>
+        <h1 className='logo'>
           <a href='/'>
             To Do List ✅
           </a>
@@ -25,7 +25,7 @@ function App () {
             </li>
             <li>
               <a href='/create-ToDo'>
-                Crea una nueva tarea!
+                Nueva tarea
               </a>
             </li>
           </ul>
