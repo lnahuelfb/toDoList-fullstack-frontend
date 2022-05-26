@@ -8,8 +8,10 @@ const Form = () => {
     description: '',
     important: false,
     complete: false
-  }
-  )
+  })
+
+  const API = 'https://todo-list-lnahuelfb.herokuapp.com/todos'
+  // const API = 'http://localhost:3001/todos'
 
   const handleChange = (e) => {
     setInput({
@@ -20,7 +22,7 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await fetch('https://todo-list-lnahuelfb.herokuapp.com/todos', {
+    await fetch(API, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

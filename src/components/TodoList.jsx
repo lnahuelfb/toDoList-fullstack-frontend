@@ -6,6 +6,7 @@ import './styles/TodosList.css'
 const TodoList = () => {
   const [Todos, setTodos] = useState([])
   const API = 'https://todo-list-lnahuelfb.herokuapp.com/todos'
+  // const API = 'http://localhost:3001/todos'
 
   const fetchData = async (API) => {
     try {
@@ -22,32 +23,32 @@ const TodoList = () => {
     fetchData(API)
   }, [Todos])
 
+  if (Todos.length <= 0) {
+    return (
+      <div className='notFound'>
+        <h1>¡Aún no has creado ninguna tarea!</h1>
+        <Form />
+      </div>
+    )
+  }
+
   return (
     <div className='list-container'>
       <h1 className='title'>ToDo's</h1>
       <div className='containerCards'>
         {
-        Todos.length > 0
-          ? Todos.map((todo) => {
-            return (
-              <TodoCard
-                key={todo.id}
-                id={todo.id}
-                task={todo.task}
-                description={todo.description}
-                important={todo.important}
-                complete={todo.complete}
-                date={todo.date}
-              />
-            )
-          })
-          : (
-            <div className='notFound'>
-              <h1>¡Aún no has creado ninguna tarea!</h1>
-              <Form />
-            </div>
-            )
-      }
+          Todos.map((todo) => (
+            <TodoCard
+              key={todo.id}
+              id={todo.id}
+              task={todo.task}
+              description={todo.description}
+              important={todo.important}
+              complete={todo.complete}
+              date={todo.date}
+            />
+          ))
+        }
       </div>
     </div>
   )
