@@ -1,12 +1,13 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+
 import Form from './components/Form.jsx'
 import TodoList from './components/TodoList.jsx'
+
 import './App.css'
 
 function App () {
   const date = new Date().toDateString()
-  console.log(date)
 
   return (
     <div className='App'>
@@ -37,7 +38,7 @@ function App () {
       </Routes>
       <footer>
         <h1>
-          <a href='https://porfolio-nahuelfb.vercel.app/'>
+          <a href='https://nahuelfb.vercel.app/'>
             Nahuel Beschtedt
           </a>
         </h1>

@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React, { useState } from 'react'
 import './styles/Form.css'
 
